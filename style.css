@@ -4,9 +4,11 @@ body {
 
 #left-icon {
   background-color: bisque;
-  width: 250px;
-  height: 35px;
+  width: 100px;
+  height: 65px;
+  margin-left: 20px;
   border-radius: 10px;
+  text-align: center;
 }
 
 #contactbutton {
