@@ -1,3 +1,10 @@
 body {
   background-color: darkslategray;
 }
+
+#left-icon {
+  background-color: bisque;
+  width: 250px;
+  height: 35px;
+  border-radius: 10px;
+}
