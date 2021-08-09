@@ -1,23 +1,607 @@
-body {
-  background-color: darkslategray;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+
+html, body {
+  position: relative;
+  background-color: #1F0638;
+  counter-reset: item;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-#left-icon {
-  background-color: bisque;
-  width: 500px;
-  height: 65px;
-  margin-left: 20px;
-  border-radius: 10px;
-  text-align: center;
+*, ::before, ::after {
+  box-sizing: border-box;
 }
 
-#contactbutton {
-  cursor: pointer;
-  margin-top: 50px;
-  background-color: transparent;
-  border: 1px solid salmon;
-  font-family: monospace;
+:root {
+  --green: #64ffda;
+  --sky-blue: #cceef7;
+  --slate: #8892b0;
+  --light-blue: #4897c9;
+  --lightest-slate: #ccd6f6;
+  --aqua: #00ffff;
+  --coral:#f08080;
+  --fz-sm: 20px;
+  --fz-lg: 18px;
+  --border-radius: 4px;
+  --font-mono: 'Open Sans', sans-serif;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0px 25px;
+}
+
+.top-content { /*outer div*/
+  position: relative;
+  margin-top: 1%;
+  margin-left: 45%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (max-width: 1800px){
+  .taskbar  {
+    display: inline;
+    white-space: nowrap;
+  }  
+}
+
+.taskbar > li {
+  display: inline;
   text-decoration: none;
-  font-size: medium;
+  margin: 35px;
+}
+
+.taskbar > li > a::before {
+  counter-increment: item;
+  content: "0" counter(item) ".  ";
+  color: var(--coral);
+  
+}
+
+
+
+li > a {
+  color: #ccd6f6 !important;
+}
+
+.left-bar-icons {
+  position: fixed;
+  left: 10px;
+  top: 45%;
+  width: 90px;
+}
+
+ul > a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.left-bar-icons > ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  -webkit-box-align: center;
+}
+
+#test-1 {
+  cursor: pointer;
+}
+
+.left-bar-icons a {
+  height: 50px;
+  width: 50px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.left-bar-icons > li {
+  cursor: pointer;
+}
+
+.left-bar-icons img {
+  position: relative;
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  margin-top: 50px;
+}
+
+a:link {
+  position: relative;
+  left: 50px;
+  text-decoration: none;
+  font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+
+li > a:hover {
+  color: lightskyblue !important;
+}
+
+.intro-section { /*this one*/
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  margin-top: 100px;
+  min-width: 100vh;
+}
+
+.paragraph-intro {
+  margin: 10px 0px 0px 30%;
+}
+
+.paragraph-intro > h1 {
+  font-family: var(--font-mono);
+  display: block;
+  font-size: var(--fz-sm);
+  font-weight: 400;
+  color: var(--sky-blue);
+  max-width: 500px;
+}
+
+.paragraph-intro > h2 {
+  color: var(--sky-blue);
+  font-size: 80px;
+  font-family: "Calibre","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+}
+
+.paragraph-intro > h3 {
+  margin-block-start: 25px;
+  font-size: 80px;
+  font-family: "Calibre","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+}
+
+p {
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.paragraph-intro > h3, p {
+  color: var(--light-blue);
+}
+
+.get-in-touch > a {
+  color: var(--coral);
+  margin-right: 100px;
+}
+
+.get-in-touch > a:hover {
+  color: var(--coral);
+}
+
+.get-in-touch {
+  margin-top: 100px;
+  margin-left: 30%;
+  padding: 1.25rem 1.25rem;
+  border: 1px solid lightcoral;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-size: var(--fz-sm);
+  transition-duration: 0.4s;
+}
+
+.get-in-touch:hover {
+  background: rgb(240, 128, 128, 0.3);
+}
+
+.profile {
+  position: relative;
+  max-width: 1000px;
+  max-height: 1000px;
+  margin: 350px 0px 0px 520px;
+}
+
+.numbered-heading::before {
+  content: "01.";
+  margin-right: 14px;
+  color: var(--coral);
+}
+
+.numbered-heading {
+  position: relative;
+  display: inline-block;  
+  top: 0;
+  color: var(--sky-blue);
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.numbered-heading::after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  width: 300px;
+  height: 1px;
+  margin-left: 50px;
+  background-color: #cad3e2;
+}
+
+.block-of-paragraphs {
+  position: relative;
+  min-width: fit-content;
+}
+
+.block-of-paragraphs > div {
+  margin-top: 40px;
+  /* padding-right: 200px; */
+}
+
+.list-wrap {
+  position: relative;
+  padding-top: 20px;
+  max-width: 300px;
+  min-height: 150px;
+} 
+
+.skills-list {
+  position: absolute;
+  margin-top: 20px;
+  left: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  list-style: none;
+}
+
+.inner {
+  position: relative;
+  padding: 15px;
+}
+
+.skills-list > li::before {
+  content: "▹";
+  color: var(--coral);
+  position: relative;
+  right: 15px;
+  line-height: 10px;
+  margin-bottom: 20px;
+}
+
+.skills-list > li {
+  color: var(--slate);
+  margin-top: 10px;
+}
+
+.cover {
+  position: absolute;
+  margin-right: 40px;
+  padding-top: 35px;
+}
+
+.cover > img {
+  position: relative;
+  top: 10px;
+  left: 50px;
+  height: 100%;
+  width: 100%;
+}
+
+.profile-pic {
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  max-width: 300px;
+}
+
+.cover::after {
+  content: "";
+  border: 2px solid var(--sky-blue);
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: 20px;
+  left: 20px;
+  z-index: -1;
+}
+
+.work-experience {
+  position: relative;
+  margin-top: 200px;
+  padding: 100px 0px 0px 600px;
+}
+
+.work-experience > h2::before {
+  content: '02. ';
+}
+
+.work-experience > .inner {
+  min-height: 250px;
+  min-height: 450px;
+}
+
+.inner > ul {
+  position: absolute;
+  left: 0px;
+  list-style: none;
+  z-index: 3;
+  max-width: fit-content;
 
 }
+
+.movingBtn {
+  background: transparent;
+  border: none;
+  padding: 20px 5px;
+  cursor: pointer;
+  width: 200px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.movingBtn > span {
+  background: transparent;
+  font-weight: 200;
+  font-size: 20px;
+  color: var(--coral);
+}
+
+.movingBtn:hover {
+  background-color: rgb(58, 13, 58);
+}
+
+.work-panel {
+  position: absolute;
+  margin-left: 400px;
+  top: 200px;
+  bottom: 20px;
+  min-width: 400px;
+  min-height: 200px;
+}
+
+.achivPanel {
+  position: absolute;
+  top: 10px;
+  min-height: 300px;
+  width: 400px;
+  font-family: "Calibre","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+}
+
+.achivPanel > h3 {
+  position: absolute;
+  left: 20px;
+}
+
+.achivPanel > p {
+  position: absolute;
+  left: 20px;
+  top: 56px;
+}
+
+.achivPanel > ul {
+  position: absolute;
+  left: -10px;
+  top: 0px;
+}
+
+.achivPanel > ul > li {
+  font-size: 20px;
+}
+
+.achievements {
+  margin-top: 110px;
+}
+
+h3 {
+  color: var(--sky-blue);
+
+}
+
+.achievements {
+  color: var(--light-blue);
+}
+
+.projects > h2::before {
+  content: '03. ';
+  color: var(--coral);
+}
+
+.project-name {
+  position: relative;
+  height: auto;
+  width: auto;
+  padding-right: 20px;
+}
+
+.project-name > p {
+  color: rgb(242, 235, 243);
+  font-size: 1.75rem;
+}
+
+.projects > h2 {
+  font-size: 30px;
+  color: var(--sky-blue);
+  display: inline-block;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.projects {
+  position: relative;
+  padding: 200px 0px 0px 550px;
+}
+
+.project-1, #project-3, #project-2, #project-4, #project-5 {
+  margin-top: 50px;
+  display: grid;
+  grid-auto-flow: column; 
+  grid-template-columns: 600px 400px;
+  gap: 70px;
+}
+
+#project-3 {
+  margin-top: 75px;
+}
+
+#project-4 {
+  margin-top: 120px;
+}
+
+.projects ul {
+  margin-top: 50px;
+  font-size: 15px;
+  list-style: none;
+  color: lightpink;
+  white-space: nowrap;
+}
+
+#project-5-skills {
+  position: relative;
+  right: 50px;
+}
+
+.projects ul > li {
+  display: inline;
+  margin-right: 40px;
+}
+
+.featured-style-project {
+  position: relative;
+  margin-right: 200px;
+  display: inline-block;
+  top: 100px;
+  width: auto;
+}
+
+.project-description {
+  position: relative;
+  max-width: 550px;
+  max-height: 200px;
+  margin-top: 100px;
+  padding-left: 10px;
+}
+
+.project-description > p {
+  color: var(--light-blue);
+  font-family: roboto,sans-serif;
+}
+
+.contact {
+  margin-right: 15%;
+  padding: 250px;
+  position: relative;
+}
+
+.contact > h1 {
+  color: var(--sky-blue);
+  margin-left: 40%;
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: inline-block;
+}
+
+.contact > h1::before {
+  content: "04. ";
+  color: var(--coral);
+  font-size: 36px;
+}
+
+.contact > div {
+  display: block;
+  max-width: 500px;
+  margin: 80px 0px 0px 40%;
+}
+
+.button-wrapper > button {
+  color: var(--coral);
+  padding: 1.25rem 1.75rem;
+  border-radius: 4px;
+  border: 1px solid var(--coral);
+  background-color: transparent;
+  font-size: var(--fz-sm);
+  margin-top: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.button-wrapper > button:hover {
+  background-color: rgb(240, 128, 128, 0.3);
+}
+
+.short-description, .salutation {
+  font-size: 18px;
+}
+
+.inner-paragraph-contain p {
+  font-size: 20px;
+}
+
+.achivPanel p {
+  font-size: 20px;
+}
+
+.resume-button { /*resume button*/
+  position: relative;
+  margin-top: 1%;
+  padding: 1.25rem 0rem;
+  border: 1px solid var(--coral);
+  font-size: var(--fz-sm);
+  width: 20%;
+  text-align: center;
+  transition: 0.4s;
+}
+
+.resume-button:hover {
+  cursor: pointer;
+  background-color: rgb(100, 255, 218, 0.3);
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  margin-left: 100px;
+  margin-top: 200px;
+  max-height: 800px;
+}
+
+.icon-1, .icon-2 {
+  position: relative;
+}
+
+.icon-2 > svg {
+  margin-bottom: 50px;
+}
+
+.icon-1 > h2, .icon-2 > h2 {
+  position: absolute;
+  color: white;
+  display: inline-block;
+  font-size: 25px;
+  top: 100%;
+  right: 45%;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
+}
+
+.icon-2 > h2 ~ p, .icon-1> h2 ~ p {
+  position: absolute;
+  color: white;
+  top: 110%;
+}
+
+.icon-1 > h2 ~ p {
+  left: 100px;
+}
+
+
+
+
+
+
+
+
