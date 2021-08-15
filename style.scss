@@ -85,9 +85,14 @@ ul > a {
   list-style: none;
 }
 
-#link-1, #link-2, #link-3, #link-4 {
+%linkStyles {
   height: 50px !important;
   left: 0px;
+
+}
+
+#link-1, #link-2, #link-3, #link-4 {
+  @extend %linkStyles
 }
 
 .left-bar-icons img {
@@ -102,7 +107,7 @@ a:link {
   position: relative;
   left: 50px;
   text-decoration: none;
-  font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+  font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono", monospace;
 }
 
 li > a {
@@ -137,16 +142,21 @@ li > a:hover {
   max-width: 500px;
 }
 
-.paragraph-intro > h2 {
-  color: var(--sky-blue);
+%paragraph-intro-font {
   font-size: 80px;
   font-family: "Calibre","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+
+}
+
+.paragraph-intro > h2 {
+  color: var(--sky-blue);
+  @extend %paragraph-intro-font
+
 }
 
 .paragraph-intro > h3 {
   margin-block-start: 25px;
-  font-size: 80px;
-  font-family: "Calibre","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+  @extend %paragraph-intro-font
 }
 
 p {
@@ -183,8 +193,12 @@ p {
   background: rgb(240, 128, 128, 0.3);
 }
 
-.profile {
+@mixin posRelative {
   position: relative;
+}
+
+.profile {
+  @include posRelative();
   max-width: 1000px;
   max-height: 1000px;
   margin: 350px 0px 0px 620px;
@@ -197,7 +211,7 @@ p {
 }
 
 .numbered-heading {
-  position: relative;
+  @include posRelative();
   display: inline-block;  
   top: 0;
   color: var(--sky-blue);
@@ -418,12 +432,16 @@ h3 {
   padding: 200px 0px 0px 550px;
 }
 
-.project-1, #project-3, #project-2, #project-4, #project-5 {
+%projectStyles {
   margin-top: 50px;
   display: grid;
   grid-auto-flow: column; 
   grid-template-columns: 600px 400px;
   gap: 70px;
+}
+
+.project-1, #project-3, #project-2, #project-4, #project-5 {
+  @extend %projectStyles
 }
 
 #project-3 {
@@ -473,96 +491,94 @@ h3 {
   font-family: roboto,sans-serif;
 }
 
-.contact {
-  margin-right: 15%;
-  padding: 250px;
-  position: relative;
-}
+@use 'contact';
 
-.contact > h1 {
-  color: var(--sky-blue);
-  margin-left: 40%;
-  font-size: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  display: inline-block;
-}
+// .contact {
+//   margin-right: 15%;
+//   padding: 250px;
+//   position: relative;
+// }
 
-.contact > h1::before {
-  content: "04. ";
-  color: var(--coral);
-  font-size: 36px;
-}
+// .contact > h1 {
+//   color: var(--sky-blue);
+//   margin-left: 40%;
+//   font-size: 30px;
+//   font-family: Verdana, Geneva, Tahoma, sans-serif;
+//   display: inline-block;
+// }
 
-.contact > div {
-  display: block;
-  max-width: 500px;
-  margin: 80px 0px 0px 40%;
-}
+// .contact > h1::before {
+//   content: "04. ";
+//   color: var(--coral);
+//   font-size: 36px;
+// }
 
-.short-description, .salutation {
-  font-size: 18px;
-}
+// .contact > div {
+//   display: block;
+//   max-width: 500px;
+//   margin: 80px 0px 0px 40%;
+// }
 
-.inner-paragraph-contain p {
-  font-size: 20px;
-}
+// .short-description, .salutation {
+//   font-size: 18px;
+// }
 
-.achivPanel p {
-  font-size: 20px;
-}
+// .inner-paragraph-contain p, .achivPanel p {
+//   font-size: 20px;
+// }
 
-.resume-button { /*resume button*/
-  position: relative;
-  margin-top: 1%;
-  padding: 1.25rem 0rem;
-  border: 1px solid var(--coral);
-  font-size: var(--fz-sm);
-  width: 20%;
-  text-align: center;
-  transition: 0.4s;
-}
+// .resume-button { /*resume button*/
+//   position: relative;
+//   margin-top: 1%;
+//   padding: 1.25rem 0rem;
+//   border: 1px solid var(--coral);
+//   font-size: var(--fz-sm);
+//   width: 20%;
+//   text-align: center;
+//   transition: 0.4s;
+// }
 
-.resume-button:hover {
-  cursor: pointer;
-  background-color: rgb(100, 255, 218, 0.3);
-}
+// .resume-button:hover {
+//   cursor: pointer;
+//   background-color: rgb(100, 255, 218, 0.3);
+// }
 
-.icons {
-  display: flex;
-  justify-content: center;
-  margin-left: 100px;
-  margin-top: 200px;
-  max-height: 800px;
-}
+// .icons {
+//   display: flex;
+//   justify-content: center;
+//   margin-left: 100px;
+//   margin-top: 200px;
+//   max-height: 800px;
+// }
 
-.icon-1, .icon-2 {
-  position: relative;
-}
+// .icon-1, .icon-2 {
+//   position: relative;
+// }
 
-.icon-2 > svg {
-  margin-bottom: 50px;
-}
+// .icon-2 > svg {
+//   margin-bottom: 50px;
+// }
 
-.icon-1 > h2, .icon-2 > h2 {
-  position: absolute;
-  color: white;
-  display: inline-block;
-  font-size: 25px;
-  top: 100%;
-  right: 45%;
-  font-family: 'Rubik', sans-serif;
-  font-weight: 300;
-}
+// .icon-1 > h2, .icon-2 > h2 {
+//   position: absolute;
+//   color: white;
+//   display: inline-block;
+//   font-size: 25px;
+//   top: 100%;
+//   right: 45%;
+//   font-family: 'Rubik', sans-serif;
+//   font-weight: 300;
+// }
 
-.icon-2 > h2 ~ p, .icon-1> h2 ~ p {
-  position: absolute;
-  color: white;
-  top: 110%;
-}
+// .icon-2 > h2 ~ p, .icon-1> h2 ~ p {
+//   position: absolute;
+//   color: white;
+//   top: 110%;
+// }
 
-.icon-1 > h2 ~ p {
-  left: 100px;
-}
+// .icon-1 > h2 ~ p {
+//   left: 100px;
+// }
 
 
 
