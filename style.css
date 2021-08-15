@@ -85,14 +85,9 @@ ul > a {
   list-style: none;
 }
 
-%linkStyles {
+#link-1, #link-2, #link-3, #link-4 {
   height: 50px !important;
   left: 0px;
-
-}
-
-#link-1, #link-2, #link-3, #link-4 {
-  @extend %linkStyles
 }
 
 .left-bar-icons img {
@@ -107,7 +102,7 @@ a:link {
   position: relative;
   left: 50px;
   text-decoration: none;
-  font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono", monospace;
+  font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
 }
 
 li > a {
@@ -142,21 +137,16 @@ li > a:hover {
   max-width: 500px;
 }
 
-%paragraph-intro-font {
-  font-size: 80px;
-  font-family: "Calibre","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
-
-}
-
 .paragraph-intro > h2 {
   color: var(--sky-blue);
-  @extend %paragraph-intro-font
-
+  font-size: 80px;
+  font-family: "Calibre","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 }
 
 .paragraph-intro > h3 {
   margin-block-start: 25px;
-  @extend %paragraph-intro-font
+  font-size: 80px;
+  font-family: "Calibre","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 }
 
 p {
@@ -193,12 +183,8 @@ p {
   background: rgb(240, 128, 128, 0.3);
 }
 
-@mixin posRelative {
-  position: relative;
-}
-
 .profile {
-  @include posRelative();
+  position: relative;
   max-width: 1000px;
   max-height: 1000px;
   margin: 350px 0px 0px 620px;
@@ -211,7 +197,7 @@ p {
 }
 
 .numbered-heading {
-  @include posRelative();
+  position: relative;
   display: inline-block;  
   top: 0;
   color: var(--sky-blue);
@@ -432,16 +418,12 @@ h3 {
   padding: 200px 0px 0px 550px;
 }
 
-%projectStyles {
+.project-1, #project-3, #project-2, #project-4, #project-5 {
   margin-top: 50px;
   display: grid;
   grid-auto-flow: column; 
   grid-template-columns: 600px 400px;
   gap: 70px;
-}
-
-.project-1, #project-3, #project-2, #project-4, #project-5 {
-  @extend %projectStyles
 }
 
 #project-3 {
@@ -521,7 +503,11 @@ h3 {
   font-size: 18px;
 }
 
-.inner-paragraph-contain p, .achivPanel p {
+.inner-paragraph-contain p {
+  font-size: 20px;
+}
+
+.achivPanel p {
   font-size: 20px;
 }
 
