@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-
-
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 html, body {
   position: relative;
   background-color: #1F0638;
@@ -13,7 +12,8 @@ html, body {
 }
 
 *, ::before, ::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 :root {
@@ -31,27 +31,42 @@ html, body {
 }
 
 .container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: 100%;
   padding: 0px 25px;
 }
 
-.top-content { /*outer div*/
+.top-content {
+  /*outer div*/
   position: relative;
   margin-top: 1%;
   margin-left: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@media (max-width: 1800px){
-  .taskbar  {
+@media (max-width: 1800px) {
+  .taskbar {
     display: inline;
     white-space: nowrap;
-  }  
+  }
 }
 
 .taskbar > li {
@@ -64,16 +79,22 @@ html, body {
   counter-increment: item;
   content: "0" counter(item) ".  ";
   color: var(--coral);
-  
 }
 
 .left-bar-icons {
   position: fixed;
   top: 45%;
   left: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 999;
 }
 
@@ -85,18 +106,14 @@ ul > a {
   list-style: none;
 }
 
-%linkStyles {
+#link-1, #link-2, #link-3, #link-4 {
   height: 50px !important;
   left: 0px;
-
-}
-
-#link-1, #link-2, #link-3, #link-4 {
-  @extend %linkStyles
 }
 
 .left-bar-icons img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 50px;
   width: 50px;
   margin-top: 50px;
@@ -118,12 +135,22 @@ li > a:hover {
   color: lightskyblue !important;
 }
 
-.intro-section { /*this one*/
+.intro-section {
+  /*this one*/
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   position: relative;
   margin-top: 100px;
   min-width: 100vh;
@@ -142,21 +169,18 @@ li > a:hover {
   max-width: 500px;
 }
 
-%paragraph-intro-font {
+.paragraph-intro > h2, .paragraph-intro > h3 {
   font-size: 80px;
   font-family: "Calibre","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
-
 }
 
 .paragraph-intro > h2 {
   color: var(--sky-blue);
-  @extend %paragraph-intro-font
-
 }
 
 .paragraph-intro > h3 {
-  margin-block-start: 25px;
-  @extend %paragraph-intro-font
+  -webkit-margin-before: 25px;
+          margin-block-start: 25px;
 }
 
 p {
@@ -186,19 +210,16 @@ p {
   text-decoration: none;
   border-radius: var(--border-radius);
   font-size: var(--fz-sm);
-  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 .get-in-touch:hover {
   background: rgba(240, 128, 128, 0.3);
 }
 
-@mixin posRelative {
-  position: relative;
-}
-
 .profile {
-  @include posRelative();
+  position: relative;
   max-width: 1000px;
   max-height: 1000px;
   margin: 350px 0px 0px 620px;
@@ -211,8 +232,8 @@ p {
 }
 
 .numbered-heading {
-  @include posRelative();
-  display: inline-block;  
+  position: relative;
+  display: inline-block;
   top: 0;
   color: var(--sky-blue);
   font-size: 30px;
@@ -232,6 +253,8 @@ p {
 
 .block-of-paragraphs {
   position: relative;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
   min-width: fit-content;
 }
 
@@ -245,15 +268,17 @@ p {
   padding-top: 20px;
   max-width: 300px;
   min-height: 150px;
-} 
+}
 
 .skills-list {
   position: absolute;
   margin-top: 20px;
   left: 10px;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(2, minmax(240px, 200px));
-  list-style: none;
+  /* -ms-grid-columns: (minmax(240px, 200px))[2];
+      grid-template-columns: repeat(2, minmax(240px, 200px));
+  list-style: none; */
 }
 
 .inner {
@@ -327,8 +352,9 @@ p {
   left: 0px;
   list-style: none;
   z-index: 3;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
   max-width: fit-content;
-
 }
 
 .movingBtn {
@@ -349,7 +375,7 @@ p {
 }
 
 .movingBtn:hover {
-  background-color: rgb(58, 13, 58);
+  background-color: #3a0d3a;
 }
 
 .work-panel {
@@ -396,7 +422,6 @@ p {
 
 h3 {
   color: var(--sky-blue);
-
 }
 
 .achievements {
@@ -416,7 +441,7 @@ h3 {
 }
 
 .project-name > p {
-  color: rgb(242, 235, 243);
+  color: #f2ebf3;
   font-size: 1.75rem;
 }
 
@@ -432,16 +457,14 @@ h3 {
   padding: 200px 0px 0px 550px;
 }
 
-%projectStyles {
-  margin-top: 50px;
-  display: grid;
-  grid-auto-flow: column; 
-  grid-template-columns: 600px 400px;
-  gap: 70px;
-}
-
 .project-1, #project-3, #project-2, #project-4, #project-5 {
-  @extend %projectStyles
+  margin-top: 50px;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  -ms-grid-columns: 600px 400px;
+      grid-template-columns: 600px 400px;
+  gap: 70px;
 }
 
 #project-3 {
@@ -525,7 +548,8 @@ h3 {
   font-size: 20px;
 }
 
-.resume-button { /*resume button*/
+.resume-button {
+  /*resume button*/
   position: relative;
   margin-top: 1%;
   padding: 1.25rem 0rem;
@@ -533,6 +557,7 @@ h3 {
   font-size: var(--fz-sm);
   width: 20%;
   text-align: center;
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -542,8 +567,12 @@ h3 {
 }
 
 .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-left: 100px;
   margin-top: 200px;
   max-height: 800px;
@@ -568,7 +597,7 @@ h3 {
   font-weight: 300;
 }
 
-.icon-2 > h2 ~ p, .icon-1> h2 ~ p {
+.icon-2 > h2 ~ p, .icon-1 > h2 ~ p {
   position: absolute;
   color: white;
   top: 110%;
@@ -577,10 +606,4 @@ h3 {
 .icon-1 > h2 ~ p {
   left: 100px;
 }
-
-
-
-
-
-
-
+/*# sourceMappingURL=style.css.map */
