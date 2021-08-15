@@ -187,7 +187,7 @@ p {
   position: relative;
   max-width: 1000px;
   max-height: 1000px;
-  margin: 350px 0px 0px 520px;
+  margin: 350px 0px 0px 620px;
 }
 
 .numbered-heading::before {
@@ -499,7 +499,7 @@ h3 {
   margin: 80px 0px 0px 40%;
 }
 
-.button-wrapper > button {
+.button-wrapper > s > button {
   color: var(--coral);
   padding: 1.25rem 1.75rem;
   border-radius: 4px;
