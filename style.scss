@@ -47,6 +47,12 @@ html, body {
   align-items: center;
 }
 
+.navbar-header {
+  margin-left: 45px;
+  margin-top: 25px;
+
+}
+
 @media (max-width: 1800px){
   .taskbar  {
     display: inline;
@@ -91,7 +97,7 @@ ul > a {
 
 }
 
-#link-1, #link-2, #link-3, #link-4 {
+#link-1, #link-2, #link-3, #link-4, #link-5, #link-6 {
   @extend %linkStyles
 }
 
