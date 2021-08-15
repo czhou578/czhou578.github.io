@@ -238,7 +238,7 @@ p {
   margin-top: 20px;
   left: 10px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(140px, 200px));
+  grid-template-columns: repeat(2, minmax(240px, 200px));
   list-style: none;
 }
 
