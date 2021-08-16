@@ -24,7 +24,7 @@ const progressLine = document.querySelector('#connect-line')
 window.addEventListener("scroll", function(event) {
   var top = this.scrollY,
   left =this.scrollX;
-  if (top >= 533.5 && top <= 800) {
+  if (top >= 733.5 && top <= 800) {
     progressLine.setAttribute('fill', "url(#right)")
   }
 });
