@@ -88,7 +88,7 @@ html, body {
 
 .left-bar-icons {
   position: fixed;
-  top: 45%;
+  top: 40%;
   left: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -281,6 +281,9 @@ p {
   left: 10px;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (minmax(240px, 200px));
+      grid-template-columns: repeat(2, minmax(240px, 200px));
+  list-style: none;
 }
 
 .inner {
