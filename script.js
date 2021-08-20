@@ -1,3 +1,5 @@
+
+
 var movingBtn = document.querySelectorAll('.movingBtn');
 movingBtn[0].style.backgroundColor = "#FFDAB9";
 var listOfPanels = document.querySelectorAll('.achivPanel');
@@ -21,13 +23,10 @@ for (let i = 0; i < movingBtn.length; i++) { //initial click, the first panel ge
 
 const progressLine = document.querySelector('#connect-line')
 
-window.addEventListener("scroll", function(event) {
-  var top = this.scrollY,
-  left =this.scrollX;
-  if (top >= 733.5 && top <= 800) {
-    progressLine.setAttribute('fill', "url(#right)")
-  }
-});
+setTimeout(function() {
+  progressLine.setAttribute('fill', "url(#right)")
+  
+}, 3000)
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -45,6 +44,9 @@ gsap.to('#ellipse', {
   duration: 7,
   ease: "power1.inOut"
 })
+
+
+
 
 
 
