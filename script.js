@@ -1,5 +1,4 @@
 
-
 var movingBtn = document.querySelectorAll('.movingBtn');
 movingBtn[0].style.backgroundColor = "#FFDAB9";
 var listOfPanels = document.querySelectorAll('.achivPanel');
