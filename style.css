@@ -226,7 +226,7 @@ p {
   position: relative;
   max-width: 1000px;
   max-height: 1000px;
-  margin: 350px 0px 0px 520px;
+  margin: 400px 0px 0px 520px;
 }
 
 .numbered-heading::before {
@@ -280,7 +280,7 @@ p {
   left: 10px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(180px, 200px));
+  -ms-grid-columns: (minmax(180px, 200px))[2];
       grid-template-columns: repeat(2, minmax(180px, 200px));
   list-style: none;
 }
