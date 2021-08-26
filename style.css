@@ -280,8 +280,8 @@ p {
   left: 10px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(180px, 200px));
-      grid-template-columns: repeat(2, minmax(180px, 200px));
+  -ms-grid-columns: (minmax(200px, 200px));
+      grid-template-columns: repeat(2, minmax(200px, 200px));
   list-style: none;
 }
 
