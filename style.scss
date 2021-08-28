@@ -156,9 +156,15 @@ li > a:hover {
   font-family: "Calibre","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 }
 
-p {
+#description-pre, p {
   font-size: 20px;
   font-family: 'Open Sans', sans-serif;
+  color: var(--light-blue);
+
+}
+
+pre {
+  margin-left: -130px;
 }
 
 .paragraph-intro > h3, p {
@@ -194,7 +200,7 @@ p {
   position: relative;
   max-width: 1000px;
   max-height: 1000px;
-  margin: 350px 0px 0px 520px;
+  margin: 350px 0px 0px 620px;
 }
 
 .numbered-heading::before {
