@@ -1,6 +1,6 @@
 # czhou578.github.io
 
-Website: [czhou578.com](czhou578.com
+Website: [czhou578.com](czhou578.com)
 
 This is my website to showcase all of my achievements. 
 
